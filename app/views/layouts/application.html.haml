@@ -1,0 +1,42 @@
+!!! 5
+%html(lang="en")
+  %head
+    %title
+      EssentialDataDemo
+
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+
+    = javascript_include_tag "application"
+    -#= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand(href=root_path)
+            EssentialDataDemo
+          .container
+            %ul.nav.nav-pills
+              %li
+                = link_to 'Add Topic', '#'
+              %li
+                = link_to 'All Topics', '#'
+    .container
+      .row
+        -#=render partial: 'shared/messages'
+        = yield
+
+    %footer.navbar-fixed-bottom
+      %p &copy; Company 2013
+
+%div{:id=>"modal-window", :class=>"modal hide", :tabindex=>"-1", :role=>"dialog", :'aria-labelledby'=>"myModalLabel", :'aria-hidden'=>"false"}
+  .modal-header
+    %button{:type=>"button", :class=>"close", :'data-dismiss'=>"modal", :'aria-hidden'=>"true"}
+      ×
+    %h3#modal-window-label
+
+  .modal-body
+  .modal-footer
+    &nbsp;

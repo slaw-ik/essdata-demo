@@ -1,2 +1,9 @@
-%h1
-  Hello World
+- @articles.each do |article|
+  .span12
+    %h2
+      = article.title
+    %p
+      = article.content
+    %p
+      %a.btn{:href => article_path(article)}
+        View details »

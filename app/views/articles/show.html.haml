@@ -1,0 +1,15 @@
+.span12
+  %h2
+    = @article.title
+  %p
+    = @article.content
+  %h3
+    Comments
+
+.span10.offset1
+  - @article.comments.each do |comment|
+    .media
+      .media-body
+        %h4.media-heading
+          = comment.author
+        =comment.content
