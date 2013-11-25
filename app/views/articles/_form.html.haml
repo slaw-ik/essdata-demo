@@ -1,5 +1,4 @@
 = form_for Article.new, :html => {:class => "form-horizontal"}, :remote => true do |f|
-  -#= render 'shared/error_messages', target: @article
   .control-group
     = label :article, :title, :class => "control-label"
     .controls
@@ -7,7 +6,7 @@
   .control-group
     = label :article, :content, :class => "control-label"
     .controls
-      = text_area :article, :content, :rows => 3, :required=>true, :title => 'This field is required'
+      = text_area :article, :content, :rows => 7, :required=>true, :title => 'This field is required'
   .control-group
     = f.button :class=>"btn btn-primary"
     %button.btn{:"data-dismiss"=>"modal", :'aria-hidden'=>"true"}

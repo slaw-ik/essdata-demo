@@ -1,0 +1,5 @@
+$('#modal-window').modal('hide');
+$('.span10.offset1').append('<div class="media"><div class="media-body"><h4 class="media-heading"><%= @comment.author%></h4><%= @comment.content%></div></div>');
+$('.span10 .media:last').attr('style','background-color: lightgreen' );
+$('body').scrollTo('.span10 .media:last',800);
+$('.span10 .media:last').animate({ backgroundColor: "white" }, 3000);

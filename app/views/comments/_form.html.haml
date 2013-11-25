@@ -1,0 +1,13 @@
+= form_for @comment, as: :comment, url: article_comments_path, :html => {:class => "form-horizontal"}, :remote => true do |f|
+  .control-group
+    = label :comment, :author, :class => "control-label"
+    .controls
+      = text_field :comment, :author, :required=>true, :title => 'This field is required'
+  .control-group
+    = label :comment, :content, :class => "control-label"
+    .controls
+      = text_area :comment, :content, :rows => 7, :required=>true, :title => 'This field is required'
+  .control-group
+    = f.button :class=>"btn btn-primary"
+    %button.btn{:"data-dismiss"=>"modal", :'aria-hidden'=>"true"}
+      Cancel

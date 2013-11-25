@@ -1,9 +1,10 @@
-- @articles.each do |article|
-  .span12
-    %h2
-      = article.title
-    %p
-      = article.content
-    %p
-      %a.btn{:href => article_path(article)}
-        View details »
+#articles
+  - @articles.each do |article|
+    .span12.article
+      %h2
+        = article.title
+      %p
+        = truncate(article.content, length: 200)
+      %p
+        %a.btn{:href => article_path(article)}
+          View details »

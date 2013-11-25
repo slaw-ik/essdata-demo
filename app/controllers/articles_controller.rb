@@ -27,6 +27,5 @@ class ArticlesController < ApplicationController
         format.js {render :action => :new}
       end
     end
-
   end
 end
