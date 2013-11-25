@@ -9,7 +9,8 @@
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
 
     = javascript_include_tag "application"
-    -#= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+    = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+    = javascript_include_tag "http://demos.flesler.com/jquery/scrollTo/js/jquery.scrollTo-min.js"
 
   %body
     .navbar.navbar-fixed-top
@@ -20,9 +21,9 @@
           .container
             %ul.nav.nav-pills
               %li
-                = link_to 'Add Topic', '#'
+                = link_to 'Add Article', new_article_path, :remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true
               %li
-                = link_to 'All Topics', '#'
+                = link_to 'All Articles', '#'
     .container
       .row
         -#=render partial: 'shared/messages'
