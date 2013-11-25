@@ -1,0 +1,4 @@
+$('.modal-body').html('<%= escape_javascript(render :partial => 'form', :object => @comment, :locals => {:article => @article}) %>');
+$('.modal-footer').remove(); // don't need a footer here
+$('#modal-window-label').html('Add Comment');
+//$('.modal-header').remove(); // don't need a header here

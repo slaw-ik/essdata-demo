@@ -1,0 +1,13 @@
+= form_for Article.new, :html => {:class => "form-horizontal"}, :remote => true do |f|
+  .control-group
+    = label :article, :title, :class => "control-label"
+    .controls
+      = text_field :article, :title, :required=>true, :title => 'This field is required'
+  .control-group
+    = label :article, :content, :class => "control-label"
+    .controls
+      = text_area :article, :content, :rows => 7, :required=>true, :title => 'This field is required'
+  .control-group
+    = f.button :class=>"btn btn-primary"
+    %button.btn{:"data-dismiss"=>"modal", :'aria-hidden'=>"true"}
+      Cancel

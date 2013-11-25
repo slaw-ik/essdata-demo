@@ -1,0 +1,16 @@
+.span12
+  %h2
+    = @article.title
+  %p
+    = @article.content
+  %h3
+    Comments
+    = link_to 'Add Comment', new_article_comments_path(@article), :remote => true, :class => 'btn btn-primary',:style => 'float: right;', 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true
+
+.span10.offset1
+  - @article.comments.each do |comment|
+    .media
+      .media-body
+        %h4.media-heading
+          = comment.author
+        =comment.content

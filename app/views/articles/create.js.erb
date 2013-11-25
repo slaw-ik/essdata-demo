@@ -1,0 +1,5 @@
+$('#modal-window').modal('hide');
+$('#articles').append('<div class="span12 article"><h2><%= @article.title%></h2><p><%= truncate(@article.content, length: 200) %></p><p><a class="btn" href="<%= article_path(@article)%>">View details »</a></p></div>');
+$('#articles .article:last').attr('style','background-color: lightgreen' );
+$('body').scrollTo('#articles .article:last',800);
+$('#articles .article:last').animate({ backgroundColor: "white" }, 3000);

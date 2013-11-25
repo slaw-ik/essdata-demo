@@ -1,0 +1,5 @@
+//$('.modal-body').html('<%#= escape_javascript(render :partial => 'form', :object => @article) %>');
+$('.modal-body').html('<%= escape_javascript(render :partial => 'form') %>');
+$('.modal-footer').remove(); // don't need a footer here
+$('#modal-window-label').html('Add Article');
+//$('.modal-header').remove(); // don't need a header here
