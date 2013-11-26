@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.15'
 
 gem 'haml'
@@ -9,7 +10,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem "heroku"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +22,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'thin'
 end
 
 gem 'jquery-rails'
